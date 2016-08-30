@@ -5,7 +5,10 @@
 
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prashanth0246/ILuv-Mysuru.git"
+    "url": "git+https://github.com/prashanth0246/ILuv-Mysuru.git",
+    
+    "username": "swGcN58lz3ialVYp0bZQMNMcjjzIf6lc8zh98MqoAT8=", // AES256 encrypted prashanth0246@gmail.com
+    "password": "tzJt79p9FF+YMo4DV0Mh9CGk9Hd/1rWMxtYutUOuKtI="
   },
   "author": "ILuv-Mysuru",
   "license": "MIT",
