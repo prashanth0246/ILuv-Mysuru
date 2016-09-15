@@ -11,7 +11,10 @@
 <link href="master/css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
+<link rel="stylesheet" href="master/css/searchbox.css">
 <!--<link href="master/css/media.css" rel="stylesheet">-->
+<!--<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="index.js"></script>-->
 </head>
 
 <body class="main_menu_bg" style="margin:0 auto;" bgcolor="#000000">
@@ -27,52 +30,62 @@
     <ul>
       <a href="index.html">
       <li class="menuli">
-      <div><img src="master/images/home.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Home</div>  	
+        <div><img src="master/images/home.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Home</div>
       </li>
       </a> <a href="placesofinterest.html">
       <li class="menuli">
-      <div><img src="master/images/poi.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Places of Interest</div>  
+        <div><img src="master/images/poi.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Places of Interest</div>
       </li>
       </a> <a href="hotelslodging.html">
       <li class="menuli">
-      <div><img src="master/images/hotlod.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Hotels & Lodging</div> 
+        <div><img src="master/images/hotlod.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Hotels & Lodging</div>
       </li>
       </a> <a href="upcomingevents.html">
       <li class="menuli">
-      <div><img src="master/images/events.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Upcoming Events</div> 
+        <div><img src="master/images/events.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Upcoming Events</div>
       </li>
       </a> <a href="finedine.html">
       <li class="menuli">
-      <div><img src="master/images/finedine.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Restaurants</div> 
+        <div><img src="master/images/finedine.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Restaurants</div>
       </li>
       </a> <a href="lifestyle.html">
       <li class="menuli">
-      <div><img src="master/images/lifestyle.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Lifestyle & Fashion</div> 
+        <div><img src="master/images/lifestyle.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Lifestyle & Fashion</div>
       </li>
-      </a> <a href="#">
+      </a> <a href="history.html">
       <li class="menuli">
-      <div><img src="master/images/history.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div> 
+        <div><img src="master/images/history.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
       </li>
-      </a> <a href="#">
+      </a> <a href="help.html">
       <li class="menuli">
-      <div><img src="master/images/help.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Help</div> 
+        <div><img src="master/images/help.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Help</div>
       </li>
       </a>
-   
     </ul>
   </div>
-  <div class="jumbotron">
-    <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
-    <script src="master/js/menu-jquery1.js"></script> 
-    <script src="master/js/menu-jquery2.js"></script> 
+  <div id="preheader">
+    <ul>
+      <div class="jumbotron">
+        <li style="width:55%;">
+          <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
+          <script src="master/js/menu-jquery1.js"></script> 
+          <script src="master/js/menu-jquery2.js"></script> 
+        </li>
+        <li style="width:43%; text-align:right; padding-top:12px;">
+          <form method="get" action="/search" id="search">
+            <input name="q" type="text" size="20" placeholder="Search..." />
+          </form>
+        </li>
+      </div>
+    </ul>
   </div>
   <!-- Menu End --> 
   <!--Logo--> 
@@ -95,6 +108,12 @@
         }
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
+		/*document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			getLifestyleFashion(function(values){
+			  myFunction(values);
+			});
+		}*/
          
         function myFunction(response) {
             var arr = JSON.parse(response);
@@ -104,11 +123,11 @@
             
             for(i = 0; i < arr.length; i++) {
             
-                out += "<div id=\"placeblocks\"><div style=\"background-color:rgba(3, 66, 136, 0.7);\"><div class=\"text\"><ul><li style=\"width:30%;\"><a href=\"#\"><img src=\"master\/images\/" + arr[i].galleries[0].img_name + "\" alt=\"\" width=\"125\" class=\"img\" style=\"border:2px solid #fff;\"></a></li>";
+                out += "<a href=\"lifestyledetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(3, 66, 136, 0.7);\"><div class=\"text\"><ul><li style=\"width:30%;\"><img src=\"master\/images\/" + arr[i].galleries[0].img_name + "\" alt=\"\" width=\"125\" class=\"img\" style=\"border:2px solid #fff;\"></li>";
                 
-                out += "<li style=\"width:60%; line-height:18px;\"><span class=\"heading1\"><a href=\"lifestyledetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none; color:#e6e814;\"> "+arr[i].title +"</a></span><br><span class=\"address1\"> "+arr[i].address +"</span></li>";
+                out += "<li style=\"width:60%; line-height:18px;\"><span class=\"heading1\" style=\"color:#e6e814;\"> "+arr[i].title +"</span><br><span class=\"address1\"> "+arr[i].address +"</span></li>";
                 
-                out += "<li style=\"width:10%;\"><img src=\"master\/images\/hotellocationicon.png\" width=\"20\" class=\"img\"></li></ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div>";
+                out += "<li style=\"width:10%;\"><img src=\"master\/images\/hotellocationicon.png\" width=\"20\" class=\"img\"></li></ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
                 
                  }
                 out += "</div>";

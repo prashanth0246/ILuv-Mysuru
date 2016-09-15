@@ -12,13 +12,16 @@
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" type="text/css" href="master/css/demo.css">
+<link rel="stylesheet" href="master/css/searchbox.css">
 
 <!-- Demo styles -->
 
 <!--<link href="master/css/media.css" rel="stylesheet">-->
+<!--<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="index.js"></script>-->
 </head>
 
-<body class="main_menu_bg" style="margin:0 auto;" bgcolor="#000000">
+<body class="main_menu_bg" style="margin:0 auto; background:#000000 !important;" bgcolor="#000000">
 <div class="logo"> <script src="master/js/menu-jquery.js"></script>
   <div class="menu"> 
     
@@ -31,52 +34,62 @@
     <ul>
       <a href="index.html">
       <li class="menuli">
-      <div><img src="master/images/home.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Home</div>  	
+        <div><img src="master/images/home.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Home</div>
       </li>
       </a> <a href="placesofinterest.html">
       <li class="menuli">
-      <div><img src="master/images/poi.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Places of Interest</div>  
+        <div><img src="master/images/poi.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Places of Interest</div>
       </li>
       </a> <a href="hotelslodging.html">
       <li class="menuli">
-      <div><img src="master/images/hotlod.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Hotels & Lodging</div> 
+        <div><img src="master/images/hotlod.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Hotels & Lodging</div>
       </li>
       </a> <a href="upcomingevents.html">
       <li class="menuli">
-      <div><img src="master/images/events.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Upcoming Events</div> 
+        <div><img src="master/images/events.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Upcoming Events</div>
       </li>
       </a> <a href="finedine.html">
       <li class="menuli">
-      <div><img src="master/images/finedine.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Restaurants</div> 
+        <div><img src="master/images/finedine.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Restaurants</div>
       </li>
       </a> <a href="lifestyle.html">
       <li class="menuli">
-      <div><img src="master/images/lifestyle.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Lifestyle & Fashion</div> 
+        <div><img src="master/images/lifestyle.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Lifestyle & Fashion</div>
       </li>
-      </a> <a href="#">
+      </a> <a href="history.html">
       <li class="menuli">
-      <div><img src="master/images/history.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div> 
+        <div><img src="master/images/history.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
       </li>
-      </a> <a href="#">
+      </a> <a href="help.html">
       <li class="menuli">
-      <div><img src="master/images/help.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Help</div> 
+        <div><img src="master/images/help.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Help</div>
       </li>
       </a>
-   
     </ul>
   </div>
-  <div class="jumbotron">
-    <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
-    <script src="master/js/menu-jquery1.js"></script> 
-    <script src="master/js/menu-jquery2.js"></script> 
+  <div id="preheader">
+    <ul>
+      <div class="jumbotron">
+        <li style="width:55%;">
+          <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
+          <script src="master/js/menu-jquery1.js"></script> 
+          <script src="master/js/menu-jquery2.js"></script> 
+        </li>
+        <li style="width:43%; text-align:right; padding-top:12px;">
+          <form method="get" action="/search" id="search">
+            <input name="q" type="text" size="20" placeholder="Search..." />
+          </form>
+        </li>
+      </div>
+    </ul>
   </div>
   <!-- Menu End --> 
   <!--Logo--> 
@@ -86,12 +99,12 @@
 <div class="container">
   <div class="main clearfix" >
     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;"> 
-        <!-- Loading Screen --> 
-        <!--<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+      <!-- Loading Screen --> 
+      <!--<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>-->
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;"> 
+      <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;"> 
         <!--
             <div data-p="225.00" style="display: none;">
                 <img data-u="image" src="img/red.jpg" />
@@ -115,15 +128,15 @@
             </div>-->
         <div data-p="225.00" style="display: none;"> <img data-u="image" src="master/images/flicker-4.jpg" /> </div>
         <div data-p="225.00" data-po="80% 55%" style="display: none;"> <img data-u="image" src="master/images/flicker-5.jpg" /> </div>
-        <div data-p="225.00" data-po="80% 55%" style="display: none;"> <img data-u="image" src="master/images/flicker-6.jpg" /> </div>
+        <div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="master/images/theorem.jpg" /></a> </div>
         <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a> </div>
-        <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1"> 
+      <!-- Bullet Navigator -->
+      <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1"> 
         <!-- bullet navigator item prototype -->
         <div data-u="prototype" style="width:16px;height:16px;"></div>
       </div>
-        <!-- Arrow Navigator --> 
-        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> </div>
+      <!-- Arrow Navigator --> 
+      <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> </div>
     <div class="clear"></div>
     <div id="placeblocks">
       <div style="background-color:rgba(86, 174, 1, 0.8);">
@@ -137,16 +150,23 @@
               <div id="id01"></div>
               <div id="id02"></div>
               <script>
-var xmlhttp = new XMLHttpRequest();
-var url = "master/json/placesInterest.json";
+				var xmlhttp = new XMLHttpRequest();
+				var url = "master/json/placesInterest.json";
+				 
+				xmlhttp.onreadystatechange=function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						myFunction(xmlhttp.responseText);
+					}
+				}
+				xmlhttp.open("GET", url, true);
+				xmlhttp.send();
 
-xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        myFunction(xmlhttp.responseText);
-    }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+/*document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	getPlacesInterest(function(values){
+	  myFunction(values);
+	});
+}*/
  
 function myFunction(response) {
     var arr = JSON.parse(response);
@@ -157,14 +177,15 @@ function myFunction(response) {
     
     $.each(arr,function(idx){
       if(arr[idx].placeid == pid) {
-    		out += "<p style=\"padding: 10px; color: #FF0; font-size:16px; font-family: century gothic;\">" + arr[idx].title + "</p>";
-    		out += "<p style=\"padding: 10px; color:#fff; font-size:14px;\"> "+arr[idx].details +"</p>";
+    		// test = $('<div/>').html(arr[idx].details).text();
+        // test2 = $('<div/>').html(test).text()
+        out += "<p style=\"padding: 10px; color: #FF0; font-size:16px; font-family: century gothic;\">" + arr[idx].title + "</p>";
+    		out += "<p style=\"padding: 10px; color:#fff; font-size:14px;\"> "+ $('<div/>').html(arr[idx].details).text() +"</p>";
         	out += "</div>";
 //			map += 
 		
   	 }
     });
- 
  	document.getElementById("id01").innerHTML = out;
 
 }

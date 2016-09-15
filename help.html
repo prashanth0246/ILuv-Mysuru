@@ -12,6 +12,8 @@
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
+
+<link rel="stylesheet" href="master/css/form-register.css">
 <!--<link href="master/css/media.css" rel="stylesheet">-->
 <!--<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="index.js"></script>-->
@@ -93,49 +95,60 @@
 <div class="clear"></div>
 <!--container-->
 <div class="container">
+
   <div class="main clearfix" >
-    <div id="heading" class="clearfix"><span class="head1">FINE DINE RESTAURANTS</span></div>
+    
     <div class="clear"></div>
-    <div id="id01"></div>
-    <script>
-        var xmlhttp = new XMLHttpRequest();
-        var url = "master/json/dineRestaurants.json";
-         
-        xmlhttp.onreadystatechange=function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                myFunction(xmlhttp.responseText);
-            }
-        }
-        xmlhttp.open("GET", url, true);
-        xmlhttp.send();
-		
-		/*document.addEventListener("deviceready", onDeviceReady, false);
-		function onDeviceReady() {
-			getDineRestaurants(function(values){
-			  myFunction(values);
-			});
-		}*/
-         
-        function myFunction(response) {
-            var arr = JSON.parse(response);
-            var i;
-            var out = "<div>";
-            var pid;
-            
-            for(i = 0; i < arr.length; i++) {
-            
-                out += "<a href=\"finedinedetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(174, 92, 55, 0.7);\"><div class=\"text\"><ul><li style=\"width:30%;\"><img src=\"master\/images\/" + arr[i].galleries[0].img_name + "\" alt=\"\" width=\"125\" class=\"img\" style=\"border:2px solid #fff;\"></li>";
-                
-                out += "<li style=\"width:60%; line-height:18px;\"><span class=\"heading1\" style=\"color:#e6e814;\"> "+arr[i].title +"</span><br><span class=\"address1\"> "+arr[i].address +"</span></li>";
-                
-                out += "<li style=\"width:10%;\"><img src=\"master\/images\/hotellocationicon.png\" width=\"20\" class=\"img\"></li></ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
-                
-                 }
-                out += "</div>";
-                
-            document.getElementById("id01").innerHTML = out;
-        }
-        </script> 
+    
+    <div class="main-content">
+
+        <!-- You only need this form and the form-register.css -->
+
+        <form class="form-register" method="post" action="#">
+
+            <div class="form-register-with-email">
+
+                <div class="form-white-background">
+
+                	<div class="form-row">
+                        <label>
+                            <span style="color:#fff;">Name</span>
+                            <input type="text" name="name" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span style="color:#fff;">Email</span>
+                            <input type="email" name="pemail" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span style="color:#fff;">Mobile</span>
+                            <input type="text" name="mobile" required>
+                        </label>
+                    </div>
+                    
+                    <div class="form-row">
+                        <label>
+                            <span style="color:#fff;">Feedback</span>
+                            <textarea rows="6" cols="28" name="feedback" required></textarea>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit">Send</button>
+                    </div>
+
+                </div>
+
+                </div>
+
+        </form>
+
+    </div>
     
     <!-- <ul>
             

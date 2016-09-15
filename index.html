@@ -11,7 +11,31 @@
 <link href="master/css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
+<link rel="stylesheet" href="master/css/searchbox.css">
 <!--<link href="master/css/media.css" rel="stylesheet">-->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script language="javascript">
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		console.log("device ready");
+	}
+</script>
+<style type="text/css">
+#add {
+	width: 100%;
+	margin: 0 auto;
+}
+#add ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#add li {
+	float: left;
+}
+</style>
 </head>
 
 <body class="main_menu_bg" style="margin:0 auto;" bgcolor="#000000">
@@ -27,53 +51,64 @@
     <ul>
       <a href="index.html">
       <li class="menuli">
-      <div><img src="master/images/home.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Home</div>  	
+        <div><img src="master/images/home.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Home</div>
       </li>
       </a> <a href="placesofinterest.html">
       <li class="menuli">
-      <div><img src="master/images/poi.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Places of Interest</div>  
+        <div><img src="master/images/poi.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Places of Interest</div>
       </li>
       </a> <a href="hotelslodging.html">
       <li class="menuli">
-      <div><img src="master/images/hotlod.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Hotels & Lodging</div> 
+        <div><img src="master/images/hotlod.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Hotels & Lodging</div>
       </li>
       </a> <a href="upcomingevents.html">
       <li class="menuli">
-      <div><img src="master/images/events.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Upcoming Events</div> 
+        <div><img src="master/images/events.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Upcoming Events</div>
       </li>
       </a> <a href="finedine.html">
       <li class="menuli">
-      <div><img src="master/images/finedine.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Restaurants</div> 
+        <div><img src="master/images/finedine.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Restaurants</div>
       </li>
       </a> <a href="lifestyle.html">
       <li class="menuli">
-      <div><img src="master/images/lifestyle.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Lifestyle & Fashion</div> 
+        <div><img src="master/images/lifestyle.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Lifestyle & Fashion</div>
       </li>
-      </a> <a href="#">
+      </a> <a href="history.html">
       <li class="menuli">
-      <div><img src="master/images/history.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div> 
+        <div><img src="master/images/history.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
       </li>
-      </a> <a href="#">
+      </a> <a href="help.html">
       <li class="menuli">
-      <div><img src="master/images/help.png"/></div>
-      <div style=" margin-left:40px; margin-top:-48px;">Help</div> 
+        <div><img src="master/images/help.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Help</div>
       </li>
       </a>
-   
     </ul>
   </div>
-  <div class="jumbotron">
-    <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
-    <script src="master/js/menu-jquery1.js"></script> 
-    <script src="master/js/menu-jquery2.js"></script> 
+  <div id="preheader">
+    <ul>
+      <div class="jumbotron">
+        <li style="width:55%;">
+          <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
+          <script src="master/js/menu-jquery1.js"></script> 
+          <script src="master/js/menu-jquery2.js"></script> 
+        </li>
+        <li style="width:43%; text-align:right; padding-top:12px;">
+          <form method="get" action="/search" id="search">
+            <input name="q" type="text" size="20" placeholder="Search..." />
+          </form>
+        </li>
+      </div>
+    </ul>
   </div>
+  
   <!-- Menu End --> 
   <!--Logo--> 
 </div>
@@ -130,14 +165,14 @@
       </div>
     </div>
     <div class="clear"></div>
-    <div id="menublocks3" class="clearfix"> <a href="#" style="text-decoration:none;">
+    <div id="menublocks3" class="clearfix"> <a href="help.html" style="text-decoration:none;">
       <div class="wid40" style="background-color:rgba(247, 65, 47, 0.7);">
         <div class="iconText"><img src="master/images/icon6.png" width="70" height="72" alt="" class="images40"><br>
           <br>
           Help<br>
         </div>
       </div>
-      </a> <a href="#" style="text-decoration:none;">
+      </a> <a href="history.html" style="text-decoration:none;">
       <div class="wid60" style="background-color:rgba(180, 14, 166,0.7);">
         <div class="iconText"><img src="master/images/icon7.png" width="74" height="70" alt="" class="images60"><br>
           <br>
@@ -147,7 +182,15 @@
       </a> </div>
     <div class="clear"></div>
     <div id="blocks">
-      <div style="background-color:rgba(255, 255, 255, 0.7); height:150px;"></div>
+      <div style="background-color:rgba(255, 255, 255, 0.7);" id="add">
+        <ul>
+          <li style="width:30%;"><img src="master/images/dasaralogo.jpg" width="100%" height="auto" alt=""/></li>
+          <li style="width:60%;">
+            <div style="padding:5px;"><strong>Welcome to Mysuru Dasara 2016</strong><br/><br/>
+            Mysuru Dasara is the Nadahabba (State-Festival) of the state of Karnataka in South West India. The Dasara festivities have a very long and rich history of more than 400 years.</div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

@@ -1,14 +1,11 @@
 /* Initial body */
 
-
-
 body {
 	left: 0;
 	margin: 0;
 	position: relative;
 }
 /* Initial menu */
-
 
 .menu {
 	background: #47a3da repeat left top;
@@ -22,8 +19,6 @@ body {
 	overflow: auto;
 }
 /* Basic styling */
-
-
 
 .jumbotron {
 	background-color: #000;
