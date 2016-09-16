@@ -73,6 +73,7 @@
         <div style=" margin-left:40px; margin-top:-48px;">Help</div>
       </li>
       </a>
+      <div style="text-align:center; color:#ffffff; padding-top:10px; font-size:10px;">&copy; 2016 Theorem Inc - All Rights Reserved</div>
     </ul>
   </div>
   <div id="preheader">
@@ -85,7 +86,7 @@
         </li>
         <li style="width:43%; text-align:right; padding-top:12px;">
           <form method="get" action="/search" id="search">
-            <input name="q" type="text" size="20" placeholder="Search..." />
+            <input name="q" type="text" size="20" placeholder="Search..." style="outline:none;" class="searchoutline"/>
           </form>
         </li>
       </div>
@@ -180,7 +181,7 @@ function myFunction(response) {
     		// test = $('<div/>').html(arr[idx].details).text();
         // test2 = $('<div/>').html(test).text()
         out += "<p style=\"padding: 10px; color: #FF0; font-size:16px; font-family: century gothic;\">" + arr[idx].title + "</p>";
-    		out += "<p style=\"padding: 10px; color:#fff; font-size:14px;\"> "+ $('<div/>').html(arr[idx].details).text() +"</p>";
+    		out += "<p style=\"padding: 10px; color:#fff; font-size:14px; text-align: justify !important;\"> "+ $('<div/>').html(arr[idx].details).text() +"</p>";
         	out += "</div>";
 //			map += 
 		

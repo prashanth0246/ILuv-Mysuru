@@ -139,6 +139,7 @@ ul {
 	opacity: 0.9;
 }
 .iconText { font-size: inherit; color: #ffffff; padding:35px 0px;}
+.searchoutline{outline:none !important;}
 
 .jssorb05 {
 	position: absolute;

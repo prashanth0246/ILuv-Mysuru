@@ -69,6 +69,7 @@
         <div style=" margin-left:40px; margin-top:-48px;">Help</div>
       </li>
       </a>
+      <div style="text-align:center; color:#ffffff; padding-top:10px; font-size:10px;">&copy; 2016 Theorem Inc - All Rights Reserved</div>
     </ul>
   </div>
   <div id="preheader">
@@ -81,7 +82,7 @@
         </li>
         <li style="width:43%; text-align:right; padding-top:12px;">
           <form method="get" action="/search" id="search">
-            <input name="q" type="text" size="20" placeholder="Search..." />
+            <input name="q" type="text" size="20" placeholder="Search..." style="outline:none;" class="searchoutline"/>
           </form>
         </li>
       </div>
@@ -94,7 +95,7 @@
 <!--container-->
 <div class="container">
   <div class="main clearfix" >
-    <div id="heading" class="clearfix"><span class="head1">UPCOMING EVENTS</span></div>
+    <div id="heading" class="clearfix"> <span class="head1">UPCOMING EVENTS</span> </div>
     <div class="clear"></div>
     <div id="id01"></div>
     <script>
@@ -123,11 +124,11 @@
             
             for(i = 0; i < arr.length; i++) {
             
-                out += "<a href=\"upcomingeventsdetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none;\"><div id=\"placeblocks\"><div style=\"background-color:rgba(255, 180, 52, 0.7);\"><div class=\"text\"><ul><li style=\"width:30%;\"><img src=\"master\/images\/" + arr[i].galleries[0].img_name + "\" alt=\"\" width=\"125\" class=\"img\" style=\"border:2px solid #fff;\"></li>";
+                out += "<a href=\"upcomingeventsdetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none;\"><div id=\"placeblocks\"><div style=\"background-color:rgba(255, 180, 52, 0.7);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=\"master\/images\/" + arr[i].galleries[0].img_name + "\" alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #fff;\"></li>";
                 
                 out += "<li style=\"width:60%; line-height:18px;\"><span class=\"heading1\"> "+arr[i].title +"</span><br><span class=\"address1\" style=\" color:#e6e814;\"> "+arr[i].address +"</span></li>";
                 
-                out += "<li style=\"width:10%;\"><img src=\"master\/images\/hotellocationicon.png\" width=\"20\" class=\"img\"></li></ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
+                out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
                 
                  }
                 out += "</div>";

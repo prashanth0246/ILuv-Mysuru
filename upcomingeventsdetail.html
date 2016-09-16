@@ -72,6 +72,7 @@
         <div style=" margin-left:40px; margin-top:-48px;">Help</div>
       </li>
       </a>
+      <div style="text-align:center; color:#ffffff; padding-top:10px; font-size:10px;">&copy; 2016 Theorem Inc - All Rights Reserved</div>
     </ul>
   </div>
   <div id="preheader">
@@ -84,7 +85,7 @@
         </li>
         <li style="width:43%; text-align:right; padding-top:12px;">
           <form method="get" action="/search" id="search">
-            <input name="q" type="text" size="20" placeholder="Search..." />
+            <input name="q" type="text" size="20" placeholder="Search..." style="outline:none;" class="searchoutline"/>
           </form>
         </li>
       </div>
@@ -98,12 +99,12 @@
 <div class="container">
   <div class="main clearfix" >
     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;"> 
-        <!-- Loading Screen --> 
-        <!--<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+      <!-- Loading Screen --> 
+      <!--<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>-->
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;"> 
+      <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;"> 
         <!--
             <div data-p="225.00" style="display: none;">
                 <img data-u="image" src="img/red.jpg" />
@@ -127,15 +128,15 @@
             </div>-->
         <div data-p="225.00" style="display: none;"> <img data-u="image" src="master/images/flicker-4.jpg" /> </div>
         <div data-p="225.00" data-po="80% 55%" style="display: none;"> <img data-u="image" src="master/images/flicker-5.jpg" /> </div>
-        <div data-p="225.00" data-po="80% 55%" style="display: none;"> <img data-u="image" src="master/images/flicker-6.jpg" /> </div>
+        <div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="master/images/theorem.jpg" /></a> </div>
         <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a> </div>
-        <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1"> 
+      <!-- Bullet Navigator -->
+      <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1"> 
         <!-- bullet navigator item prototype -->
         <div data-u="prototype" style="width:16px;height:16px;"></div>
       </div>
-        <!-- Arrow Navigator --> 
-        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> </div>
+      <!-- Arrow Navigator --> 
+      <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> </div>
     <div class="clear"></div>
     <div id="placeblocks">
       <div style="background-color:rgba(255, 180, 52, 0.8);">
@@ -176,7 +177,7 @@ function myFunction(response) {
     $.each(arr,function(idx){
       if(arr[idx].placeid == pid) {
     		out += "<p style=\"padding: 10px; color: #FF0; font-size:16px; font-family: century gothic;\">" + arr[idx].title + "</p>";
-    		out += "<p style=\"padding: 10px; color:#fff; font-size:14px;\"> "+$('<div/>').html(arr[idx].details).text() +"</p>";
+    		out += "<p style=\"padding: 10px; color:#fff; font-size:14px; text-align: justify !important;\"> "+$('<div/>').html(arr[idx].details).text() +"</p>";
         	out += "</div>";
 //			map += 
 		
