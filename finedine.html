@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
+<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Poiret+One|Righteous" rel="stylesheet">
 <!--<link href="master/css/media.css" rel="stylesheet">-->
 <!--<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="index.js"></script>-->
@@ -23,7 +24,7 @@
     
     <!-- Menu icon -->
     
-    <div class="icon-close"> <i class="fa fa-close"></i> <a>CLOSE</a></div>
+    <div class="icon-close"> <i class="fa fa-close"></i> <a style="font-family: 'Abel', sans-serif;">CLOSE</a></div>
     
     <!-- Menu -->
     
@@ -95,7 +96,8 @@
 <!--container-->
 <div class="container">
   <div class="main clearfix" >
-    <div id="heading" class="clearfix"><span class="head1">FINE DINE RESTAURANTS</span></div>
+    <div id="heading" class="clearfix"> <span style="font-size:16px; color:#ffffff; line-height:30px; font-family: 'Courgette', cursive;">Fine Dine Restaurants</span> </div>
+    <div class="clear"></div>
     <div class="clear"></div>
     <div id="id01"></div>
     <script>
@@ -125,9 +127,9 @@
             
             for(i = 0; i < arr.length; i++) {
             
-                out += "<a href=\"finedinedetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(174, 92, 55, 0.7);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=\"master\/images\/" + arr[i].galleries[0].img_name + "\" alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #fff;\"></li>";
+                out += "<a href=\"finedinedetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + arr[i].galleries[0].img_name + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #fff;\"></li>";
                 
-                out += "<li style=\"width:60%; line-height:18px;\"><span class=\"heading1\" style=\"color:#e6e814;\"> "+arr[i].title +"</span><br><span class=\"address1\"> "+arr[i].address +"</span></li>";
+                out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold;\"> "+arr[i].title +"</span><br><span style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:14px; \"> "+arr[i].address +"</span></li>";
                 
                 out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
                 

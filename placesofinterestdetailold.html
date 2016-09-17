@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" type="text/css" href="master/css/demo.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
+
 <!-- Demo styles -->
 
 <!--<link href="master/css/media.css" rel="stylesheet">-->
@@ -139,7 +140,7 @@
       <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> </div>
     <div class="clear"></div>
     <div id="placeblocks">
-      <div style="background-color:rgba(174, 92, 55, 0.8);">
+      <div style="background-color:rgba(86, 174, 1, 0.8);">
         <div class="detailblock">
           <div id="box1">
             <div id="tabs">
@@ -150,20 +151,20 @@
               <div id="id01"></div>
               <div id="id02"></div>
               <script>
-var xmlhttp = new XMLHttpRequest();
-var url = "master/json/dineRestaurants.json";
-
-xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        myFunction(xmlhttp.responseText);
-    }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+				var xmlhttp = new XMLHttpRequest();
+				var url = "master/json/placesInterest.json";
+				 
+				xmlhttp.onreadystatechange=function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						myFunction(xmlhttp.responseText);
+					}
+				}
+				xmlhttp.open("GET", url, true);
+				xmlhttp.send();
 
 /*document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-	getDineRestaurants(function(values){
+	getPlacesInterest(function(values){
 	  myFunction(values);
 	});
 }*/
@@ -177,14 +178,15 @@ function myFunction(response) {
     
     $.each(arr,function(idx){
       if(arr[idx].placeid == pid) {
-    		out += "<p style=\"padding: 10px; color: #FF0; font-size:16px; font-family: century gothic;\">" + arr[idx].title + "</p>";
+    		// test = $('<div/>').html(arr[idx].details).text();
+        // test2 = $('<div/>').html(test).text()
+        out += "<p style=\"padding: 10px; color: #FF0; font-size:16px; font-family: century gothic;\">" + arr[idx].title + "</p>";
     		out += "<p style=\"padding: 10px; color:#fff; font-size:14px; text-align: justify !important;\"> "+ $('<div/>').html(arr[idx].details).text() +"</p>";
         	out += "</div>";
 //			map += 
 		
   	 }
     });
- 
  	document.getElementById("id01").innerHTML = out;
 
 }

@@ -11,6 +11,7 @@ body {
 a {
 	outline: none !important;
 }
+
 .container {
 	width: 100%;
 	margin-top: 51px;
@@ -41,7 +42,7 @@ a {
 	margin: 0px;
 }
 .main_menu_bg {
-	background: url(../images/MainBg.jpg) no-repeat center center fixed;
+	background-color:#0f2b50;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -123,7 +124,6 @@ ul {
 #blocks .text {font-size: inherit; color: #ffffff; padding:12px;}
 
 #heading {width:auto; margin: 7px 7px 0px 7px !important;overflow: hidden !important;}
-#heading .head1 {font-size:15px; color:#ffffff; line-height:30px; }
 
 #placeblocks { width:auto; margin: 7px !important;overflow: hidden !important;}
 #placeblocks .text {font-size: inherit; color: #ffffff; padding:12px;}
@@ -140,6 +140,21 @@ ul {
 }
 .iconText { font-size: inherit; color: #ffffff; padding:35px 0px;}
 .searchoutline{outline:none !important;}
+
+/* Toggle Map styles*/
+#mapToggle {
+ border-radius:5px;
+ background-color:#989999;
+ color:#fff;
+ padding:10px;
+ cursor:pointer;
+ width:97%;
+ margin: 0 auto;
+ }
+#mapToggle i {
+ float:right;
+ } 
+/* Toggle Map styles ends*/
 
 .jssorb05 {
 	position: absolute;
