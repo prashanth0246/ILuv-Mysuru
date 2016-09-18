@@ -66,8 +66,9 @@ body {
 .icon-menu {
 	color: #fff;
 	cursor: pointer;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	font-size: 20px;
+	font-weight:bold;
 	padding-bottom: 11.5px;
 	padding-left: 9px;
 	padding-top: 11.5px;

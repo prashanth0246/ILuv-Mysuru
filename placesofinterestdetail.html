@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" type="text/css" href="master/css/demo.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
-<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Poiret+One|Righteous" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" type="text/css" href="master/css/map.css">
@@ -101,7 +101,7 @@
     <ul>
       <div class="jumbotron">
         <li style="width:55%;">
-          <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
+          <div class="icon-menu"> <i class="fa fa-bars"></i><span style="padding-left:10px;">ILuv Mysuru</span></div>
           <script src="master/js/menu-jquery1.js"></script> 
           <script src="master/js/menu-jquery2.js"></script> 
         </li>
@@ -226,11 +226,11 @@ if(arr[idx].placeid == pid) {
 // test2 = $('<div/>').html(test).text()
 out += "<p style=\"color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
 out += "</div>";
-out2 += "<p style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:16px; text-align: justify !important; padding:10px;\"> "+ $('<div/>').html(arr[idx].details).text() +"</p>";
+out2 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</p>";
 out2 += "</div>";
  maps += "</div>";
-}
-var lati = arr[idx].lati;
+ 
+ var lati = arr[idx].lati;
 var longi = arr[idx].longi;
 
 var center = new google.maps.LatLng(lati, longi);
@@ -244,7 +244,7 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-  var content = '<div id="iw-container">' +
+  /*var content = '<div id="iw-container">' +
                     '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
                     '<div class="iw-content">' +
                       '<div class="iw-subTitle">History</div>' +
@@ -255,7 +255,7 @@ function initialize() {
                       '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
-                  '</div>';
+                  '</div>';*/
   var infowindow = new google.maps.InfoWindow({
     content: content,
     maxWidth: 350
@@ -265,11 +265,11 @@ function initialize() {
   var marker = new google.maps.Marker({
     position: factory,
     map: map,
-    title:"Fábrica de Porcelana da Vista Alegre"
+ title: arr[idx].title 
   });
-  google.maps.event.addListener(marker, 'click', function() {
+  /*google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
-  });
+  });*/
 
   google.maps.event.addListener(map, 'click', function() {
     infowindow.close();
@@ -294,6 +294,8 @@ function initialize() {
     });
   });
 }
+}
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 });

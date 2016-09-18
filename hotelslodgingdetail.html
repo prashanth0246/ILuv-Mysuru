@@ -13,14 +13,36 @@
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" type="text/css" href="master/css/demo.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
+<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" type="text/css" href="master/css/map.css">
+
 <!-- Demo styles -->
 
 <!--<link href="master/css/media.css" rel="stylesheet">-->
 <!--<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="index.js"></script>-->
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.20&sensor=false"></script>
+<style>
+#panel, #flip {
+	padding: 5px;
+	text-align: center;
+	background-color: #e5eecc;
+	border: solid 1px #c3c3c3;
+}
+#panel {
+	padding: 50px;
+	display: none;
+}
+#id02 {
+	padding: 10px;
+}
+</style>
 </head>
 
-<body class="main_menu_bg" style="margin:0 auto; background:#000000 !important;" bgcolor="#000000">
+<body class="main_menu_bg" style="margin:0 auto;">
 <div class="logo"> <script src="master/js/menu-jquery.js"></script>
   <div class="menu"> 
     
@@ -79,7 +101,7 @@
     <ul>
       <div class="jumbotron">
         <li style="width:55%;">
-          <div class="icon-menu"> <i class="fa fa-bars"></i> I LUV MYSURU </div>
+          <div class="icon-menu"> <i class="fa fa-bars"></i><span style="padding-left:10px;">ILuv Mysuru</span></div>
           <script src="master/js/menu-jquery1.js"></script> 
           <script src="master/js/menu-jquery2.js"></script> 
         </li>
@@ -139,97 +161,25 @@
       <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> </div>
     <div class="clear"></div>
     <div id="placeblocks">
-      <div style="background-color:rgba(57, 139, 178, 0.8);">
+      <div style="background-color:rgba(250, 250, 250, 1.0);">
         <div class="detailblock">
           <div id="box1">
             <div id="tabs">
-              <ul style="height:40px; background-color:#fff; color:#000; padding-left:10px; padding-top:10px;">
-                <li><a href="#tabs-1">Detail</a></li>
-                <li style="padding-left:40px;"><a href="#tabs-2">Map</a></li>
-              </ul>
               <div id="id01"></div>
+              <div id="mapToggle">Map <i class="fa fa-chevron-up"></i></div>
               <div id="id02"></div>
-              <script>
-var xmlhttp = new XMLHttpRequest();
-var url = "master/json/hotelsLodging.json";
- 
-xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        myFunction(xmlhttp.responseText);
-    }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-/*document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-	getHotelsLodging(function(values){
-	  myFunction(values);
-	});
-}
- */
-function myFunction(response) {
-    var arr = JSON.parse(response);
-    var i;
-    var out = "<div id=\"tabs-1\">";   
-//	var maps = "<div id=\"tabs-2\">";
-    var pid = getPid();
-    
-    $.each(arr,function(idx){
-      if(arr[idx].placeid == pid) {
-    		out += "<p style=\"padding: 10px; color: #FF0; font-size:16px; font-family: century gothic;\">" + arr[idx].title + "</p>";
-    		out += "<p style=\"padding: 10px; color:#fff; font-size:14px; text-align: justify !important;\"> "+$('<div/>').html(arr[idx].details).text() +"</p>";
-        	out += "</div>";
-//			map += 
-		
-  	 }
-    });
- 
- 	document.getElementById("id01").innerHTML = out;
-
-}
-</script> 
-              <!--<div id="tabs-1">
-            <p style="padding: 10px; color: #FF0; font-size:18px; font-family: century gothic;"> Mysore Palace </p>
-            <p style="padding: 10px; color:#fff;"> The Palace of Mysore is a historical palace in the city of Mysore in Karnataka, southern India. It is the official residence and seat of the Wodeyars — the rulers of Mysore, the royal family of Mysore, who ruled the princely state from 1399 to 1950. The palace houses two durbar halls (ceremonial meeting halls of the royal court) and incorporates a mesmerizing and gigantic array of courtyards, gardens, and buildings. The palace is in the central region of inner Mysore, facing the Chamundi Hills eastward.<br/>
-            <br/>
-            Address: Sayyaji Rao Road, Mysuru, Karnataka 570001.<br/>
-            <br/>
-            <u>Hours:</u><br/>
-            - Monday<br/>
-            &nbsp;&nbsp;10am-5:30pm<br/>
-            <br/>
-            - Tuesday<br/>
-            &nbsp;&nbsp;10am-5:30pm<br/>
-            <br/>
-            - Wednesday<br/>
-            &nbsp;&nbsp;10am-5:30pm<br/>
-            <br/>
-            - Thursday<br/>
-            &nbsp;&nbsp;10am-5:30pm<br/>
-            <br/>
-            - Friday<br/>
-            &nbsp;&nbsp;10am-5:30pm<br/>
-            <br/>
-            - Saturday<br/>
-            &nbsp;&nbsp;10am-5:30pm<br/>
-            <br/>
-            - Sunday<br/>
-            &nbsp;&nbsp;10am-5:30pm<br/>
-            <br/>
-            <br/>
-            Mysore is commonly described as the City of Palaces. There are about seven palaces inclusive of this; however, Mysore Palace refers specifically to the one within the Old Fort. Built by the Maharaja Rajarshi His Highness Krishnarajendra Wadiyar IV, Mysore Palace is now one of the most famous tourist attractions in India, after the Taj Mahal, and has more than 6 million visitors annuall<br/>
-            <br/>
-          </p>
-          </div>-->
-              <div id="tabs-2">
+              <div id="id03"></div>
+              
+              <!--              <div id="maps"></div>--> 
+              
+              <!--              <div id="tabs-2">
                 <p style="padding: 10px;">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31186.372447291145!2d76.621879271099!3d12.29580479330322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDE3JzQ0LjkiTiA3NsKwMzgnMjEuOCJF!5e0!3m2!1sen!2s!4v1472471812359" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </p>
-              </div>
+              </div>--> 
             </div>
           </div>
           <div class="clear"></div>
-          <div style="height:20px"></div>
         </div>
       </div>
       <script type="text/javascript">
@@ -247,13 +197,135 @@ function getPid() {
     </div>
   </div>
 </div>
-<script src="master/js/jquery-1.12.4.js"></script> 
 <script src="master/js/jquery-ui.js"></script> 
 <script>
-  $( function() {
-    $( "#tabs" ).tabs();
-  } );
-  </script> 
+
+var xmlhttp = new XMLHttpRequest();
+var url = "master/json/hotelsLodging.json";
+ 
+xmlhttp.onreadystatechange=function() {
+	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		myFunction(xmlhttp.responseText);
+	}
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
+function myFunction(response) {
+var arr = JSON.parse(response);
+var i;
+var out = "<div>";
+var out2 = "<div id=\"details\">";   
+var maps = "<div id=\"map-canvas\">";
+var pid = getPid();
+
+$.each(arr,function(idx){
+if(arr[idx].placeid == pid) {
+// test = $('<div/>').html(arr[idx].details).text();
+// test2 = $('<div/>').html(test).text()
+out += "<p style=\"color:#27aef5; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
+out += "</div>";
+out2 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</p>";
+out2 += "</div>";
+ maps += "</div>";
+ 
+ var lati = arr[idx].lati;
+var longi = arr[idx].longi;
+
+var center = new google.maps.LatLng(lati, longi);
+var factory = new google.maps.LatLng(lati, longi);
+
+function initialize() {
+	
+  var mapOptions = {
+    center: center,
+    zoom: 16,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+  /*var content = '<div id="iw-container">' +
+                    '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
+                    '<div class="iw-content">' +
+                      '<div class="iw-subTitle">History</div>' +
+                      '<img src="images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
+                      '<div class="iw-subTitle">Contacts</div>' +
+                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
+                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                  '</div>';*/
+  var infowindow = new google.maps.InfoWindow({
+    content: content,
+    maxWidth: 350
+  });
+   
+  // marker options
+  var marker = new google.maps.Marker({
+    position: factory,
+    map: map,
+ title: arr[idx].title 
+  });
+  /*google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });*/
+
+  google.maps.event.addListener(map, 'click', function() {
+    infowindow.close();
+  });
+
+  google.maps.event.addListener(infowindow, 'domready', function() {
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
+    iwCloseBtn.mouseout(function(){
+      $(this).css({opacity: '1'});
+    });
+  });
+}
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+});
+
+
+document.getElementById("id01").innerHTML = out;
+document.getElementById("id02").innerHTML = maps;
+document.getElementById("id03").innerHTML = out2;
+//document.getElementById("id02").style.display = "none";
+}
+</script> 
+<script>
+//  $( function() {
+//    $( "#tabs" ).tabs();
+//  } );
+</script> 
+<script src="master/js/jquery-1.12.4.js"></script> 
+<script type="text/javascript" >
+
+$(document).ready(function(){
+    $("#mapToggle").click(function(){
+        $("#id02").slideToggle("slow");	
+		$(this).find('i').toggleClass('fa fa-chevron-up fa fa-chevron-down')			
+
+    });
+});
+</script> 
 <script type="text/javascript" src="master/js/jssor.slider-21.1.5.min.js"></script> 
 <!-- use jssor.slider-21.1.5.debug.js instead for debug --> 
 <script type="text/javascript" src="master/js/carousel.js"></script> 
