@@ -4,18 +4,19 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
 <title>ILuv Mysuru | Main</title>
 <link href="master/css/style.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="master/css/menu.css">
+<!--<link rel="stylesheet" type="text/css" href="master/css/menu.css">-->
 <link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
 <link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
 <!--<link href="master/css/media.css" rel="stylesheet">-->
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="index.js"></script>
+<script src="master/js/menu-jquery.js"></script>
+<script src="master/js/menu-jquery1.js"></script> 
 <script language="javascript">
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
@@ -23,7 +24,7 @@
 	}
 </script>
 <style type="text/css">
-#add {
+/*#add {
 	width: 100%;
 	margin: 0 auto;
 }
@@ -35,86 +36,15 @@
 }
 #add li {
 	float: left;
-}
+}*/
 /* testing styles */
-.iconText {
-	text-align:center;
-	}
-.full {
-	width:100% !important;
-	}
-.tableWrap {
-    overflow-x: hidden;
-}
-.tableBlock {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 0px;
-    /*margin: 0 -15px;*/
-}
-.tableWrap > .tableBlock {
-	border-spacing:5px;
-}
-.tableWrap > .tableBlock {
-	margin-bottom:-5px;
-}
-.mlft10 {
-	margin-left:10px !important;
-}
-.mb10 {
-	margin-bottom:10px !important;
-}
-.tableRow {
-    display: table-row;
-}
-.tableCell, .tableCell2 {
-    display: table-cell;
-    padding: 10px;
-/*    border: 1px solid red;*/
-	vertical-align:middle;
-	text-align:center;
-	font-family: 'Abel', sans-serif;
-	font-size:16px;
-	color:#000;
-}
-.tableCell a, .tableCell2 a {
-	color:#ffffff;
-	}
-.tableCell {
-    width: 40%;
-}
-.tableCell2 {
-    width: 60%;
-}
-.nopad {
-	padding:0px;
-}
-.noborder {
-	border:none !important;	
-}
-.noborderspacing {
-	border-spacing:0px !important;
-}
-.img50 {
-	width:50% !important;
-	height:auto !important;
-	}
-	
-.img70 {
-width:70% !important;
-height:auto !important;
-}
 
-.img60 {
-width:60% !important;
-height:auto !important;
-}
 /* testing styles end */
 </style>
 </head>
 
-<body class="main_menu_bg" style="margin:0 auto;" bgcolor="#000000">
-<div class="logo"> <script src="master/js/menu-jquery.js"></script>
+<body>
+<div class="logo">
   <div class="menu"> 
     
     <!-- Menu icon -->
@@ -173,8 +103,6 @@ height:auto !important;
       <div class="jumbotron">
         <li style="width:55%;">
           <div class="icon-menu"> <i class="fa fa-bars"></i><span style="padding-left:10px;">ILuv Mysuru</span></div>
-          <script src="master/js/menu-jquery1.js"></script> 
-          <script src="master/js/menu-jquery2.js"></script> 
         </li>
         <li style="width:43%; text-align:right; padding-top:12px;">
           <form method="get" action="/search" id="search">
