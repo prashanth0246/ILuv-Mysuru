@@ -65,13 +65,18 @@
         <div><img src="master/images/history.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
       </li>
-      </a> <a href="help.html">
+      </a> <a href="#">
+      <li class="menuli">
+        <div><img src="master/images/contact.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Emergency Contacts</div>
+      </li>
+      </a><a href="help.html">
       <li class="menuli">
         <div><img src="master/images/help.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">Help</div>
       </li>
       </a>
-      <div style="text-align:center; color:#ffffff; padding-top:10px; font-size:10px;">&copy; 2016 Theorem Inc - All Rights Reserved</div>
+      <div style="text-align:center; color:#ffffff; padding-top:10px;"><a href="http://www.theoreminc.net" style="text-decoration:none !important; font-size:10px; text-transform:none !important;">&copy; 2016 Theorem Inc - All Rights Reserved</a></div>
     </ul>
   </div>
   <div id="preheader">
@@ -97,7 +102,7 @@
 <!--container-->
 <div class="container">
   <div class="main clearfix" >
-    <div id="heading" class="clearfix"> <span style="font-size:16px; color:#ffffff; line-height:30px; font-family: 'Courgette', cursive;">Places of Interest</span> </div>
+    <div id="heading" class="clearfix"> <span style="font-size:16px; color:#ffffff; line-height:30px; font-family: 'Abel', sans-serif;">Places of Interest</span> </div>
     <div class="clear"></div>
     <div id="id01"></div>
     <script>
@@ -133,9 +138,9 @@
 			else {
 			thumbImage = encodeURI(arr[i].galleries[0].img_name);
 			}
-                out += "<a href=\"placesofinterestdetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none;\"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
+                out += "<a href=\"placesofinterestdetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none;\"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"85\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
                 
-                out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold;\"> "+arr[i].title +"</span><br><span style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:14px; \"> "+arr[i].address +"</span></li>";
+                out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold;\"> "+arr[i].title +"</span><br><span style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:14px; \"> "+arr[i].address +"</span><br><img src=\"master\/images\/adventure.png\" style=\"padding-top:5px;\">&nbsp;&nbsp;<img src=\"master\/images\/rating.png\" style=\"padding-top:5px;\">&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#989999; font-family: 'Abel', sans-serif;\">7.5 kms</span></li>";
                 
                 out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
                 

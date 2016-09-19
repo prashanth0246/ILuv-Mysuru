@@ -145,7 +145,7 @@ div#id03 div#details > div, div#id03 div#details > div em, div#id03 div#details 
 
 #heading {width:auto; margin: 7px 7px 0px 7px !important;overflow: hidden !important;}
 
-#placeblocks { width:auto; margin: 7px !important;overflow: hidden !important;}
+#placeblocks { width:auto; margin: 1px !important;overflow: hidden !important;}
 #placeblocks .text {font-size: inherit; color: #ffffff; padding:12px;}
 #placeblocks .detailblock {font-size: inherit; color: #ffffff; padding:10px 0px;}
 #placeblocks ul { list-style-type: none; margin: 0;	padding: 0;	overflow: hidden;}
