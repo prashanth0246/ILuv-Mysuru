@@ -10,7 +10,7 @@
 <title>ILuv Mysuru | Main</title>
 <link href="master/css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
-<link rel="stylesheet" href="master/css/menu-font-awesome.css">
+<link rel="stylesheet" href="master/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="master/css/demo.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
 <link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
@@ -242,8 +242,9 @@ out2 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</p>";
 out2 += "</div>";
  maps += "</div>";
  
- var lati = arr[idx].lati;
-var longi = arr[idx].longi;
+var lati = arr[idx].lati.substr(0, 8);
+var longi = arr[idx].longi.substr(0, 8);
+console.log ("selected page Latitude is " + lati + " & Longitude is " + longi);
 
 var center = new google.maps.LatLng(lati, longi);
 var factory = new google.maps.LatLng(lati, longi);

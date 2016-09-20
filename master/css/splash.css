@@ -1,4 +1,4 @@
-@import url('fonts/fonts.css');
+@import url('../fonts/fonts.css');
 @import url('reset.css');
 
 /* General Demo Style */
@@ -24,7 +24,7 @@ a{
 /* Header Style */
 
 
-body {
+body#splash {
 	background: #310404 url(../images/8649808366_303f841d7f_o.jpg) no-repeat top left;
 	font-family: 'BebasNeueRegular';
 	background-size: cover;

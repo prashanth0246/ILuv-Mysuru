@@ -10,7 +10,7 @@
 <title>ILuv Mysuru | Main</title>
 <link href="master/css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
-<link rel="stylesheet" href="master/css/menu-font-awesome.css">
+<link rel="stylesheet" href="master/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="master/css/demo.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
 <link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
@@ -227,6 +227,7 @@ var pid = getPid();
 
 $.each(arr,function(idx){
 if(arr[idx].placeid == pid) {
+
 // test = $('<div/>').html(arr[idx].details).text();
 // test2 = $('<div/>').html(test).text()
 out += "<p style=\"color:#27aef5; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
@@ -235,8 +236,9 @@ out2 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</p>";
 out2 += "</div>";
  maps += "</div>";
  
- var lati = arr[idx].lati;
-var longi = arr[idx].longi;
+var lati = arr[idx].lati.substr(0, 8);
+var longi = arr[idx].longi.substr(0, 8);
+console.log ("selected page Latitude is " + lati + " & Longitude is " + longi); 
 
 var center = new google.maps.LatLng(lati, longi);
 var factory = new google.maps.LatLng(lati, longi);
@@ -249,7 +251,7 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-  /*var content = '<div id="iw-container">' +
+  var content = '<div id="iw-container">' +
                     '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
                     '<div class="iw-content">' +
                       '<div class="iw-subTitle">History</div>' +
@@ -260,7 +262,7 @@ function initialize() {
                       '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
-                  '</div>';*/
+                  '</div>';
   var infowindow = new google.maps.InfoWindow({
     content: content,
     maxWidth: 350
@@ -272,12 +274,12 @@ function initialize() {
     map: map,
  title: arr[idx].title 
   });
-  /*google.maps.event.addListener(marker, 'click', function() {
+  google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
   });
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
-  });*/
+  });
 
   google.maps.event.addListener(map, 'click', function() {
     infowindow.close();
