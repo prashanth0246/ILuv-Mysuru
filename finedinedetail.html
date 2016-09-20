@@ -201,8 +201,39 @@ function getPid() {
 <script>
 
 var xmlhttp = new XMLHttpRequest();
-var url = "master/json/dineRestaurants.json";
- 
+// var url = "master/json/dineRestaurants.json";
+var pages = [
+				["finedine","finedinedetail","dineRestaurants"],
+				["history","historydetail","historygeography"],
+				["hotelslodging","hotelslodgingdetail","hotelsLodging"],
+				["lifestyle","lifestyledetail","lifestyleFashion"],
+				["placesofinterest","placesofinterestdetail","placesInterest"],
+				["upcomingevents","upcomingeventsdetail","upcomingEvents"]
+			],
+	url,
+	url_link,
+	path = location.pathname;
+	
+function getUrl (path, pages){
+for(i=0; i<pages.length; i++){
+   if (pages[i][0] || pages[i][1] === location.pathname){
+   	return function(){
+       url = "master/json/" + pages[i][2] + ".json";
+       url_link = pages[i][1] + ".html?pid=";   		
+   	};
+   }
+ }		
+}
+var url = getUrl(path, pages);
+url();
+
+console.log(url);
+console.log(url_link);
+
+
+
+
+
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		myFunction(xmlhttp.responseText);
