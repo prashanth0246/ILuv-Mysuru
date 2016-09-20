@@ -1,10 +1,3 @@
-@import url('splash.css');
-@import url('menu.css');
-@import url('font-awesome.min.css');
-@import url('searchbox.css');
-@import url('map.css');
-@import url('form-register.css');
-
 /* GLOBAL */
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -65,85 +58,15 @@ a {
 	float: left;
 }
 
-.iconText {
-	text-align:center;
-	}
-.full {
-	width:100% !important;
-	}
-.tableWrap {
-    overflow-x: hidden;
-}
-.tableBlock {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 0px;
-    /*margin: 0 -15px;*/
-}
-.tableWrap > .tableBlock {
-	border-spacing:5px;
-}
-.tableWrap > .tableBlock {
-	margin-bottom:-5px;
-}
-.mlft10 {
-	margin-left:10px !important;
-}
-.mb10 {
-	margin-bottom:10px !important;
-}
-.tableRow {
-    display: table-row;
-}
-.tableCell, .tableCell2 {
-    display: table-cell;
-    padding: 10px;
-/*    border: 1px solid red;*/
-	vertical-align:middle;
-	text-align:center;
-	font-family: 'Abel', sans-serif;
-	font-size:16px;
-	color:#000;
-}
-.tableCell a, .tableCell2 a {
-	color:#ffffff;
-	}
-.tableCell {
-    width: 40%;
-}
-.tableCell2 {
-    width: 60%;
-}
-.nopad {
-	padding:0px;
-}
-.noborder {
-	border:none !important;	
-}
-.noborderspacing {
-	border-spacing:0px !important;
-}
-.img50 {
-	width:50% !important;
-	height:auto !important;
-	}
-	
-.img70 {
-width:70% !important;
-height:auto !important;
-}
-
-.img60 {
-width:60% !important;
-height:auto !important;
-}
-
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
+
+#bm_ul {width:100% !important;}
+#bm_ul li {float:left !important; width:33% !important; text-align:center !important; padding-top:5px !important;}
 /*li {
 	float: left;
 }*/
@@ -188,6 +111,16 @@ div#id03 div#details > div, div#id03 div#details > div em, div#id03 div#details 
 	z-index:10000000000 !important;
 	width:100%;
 	top:0px;
+}
+
+.bottommenu
+{
+	height: 50px !important;
+	position:fixed;
+	background-color:#282828;
+	z-index:10000000000 !important;
+	width:100%;
+	bottom:0px;
 }
 
 #menublocks {margin: 7px; overflow: hidden !important;}

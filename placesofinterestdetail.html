@@ -10,7 +10,7 @@
 <title>ILuv Mysuru | Main</title>
 <link href="master/css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="master/css/menu.css">
-<link rel="stylesheet" href="master/css/font-awesome.min.css">
+<link rel="stylesheet" href="master/css/menu-font-awesome.css">
 <link rel="stylesheet" type="text/css" href="master/css/demo.css">
 <link rel="stylesheet" href="master/css/searchbox.css">
 <link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
@@ -38,6 +38,7 @@
 }
 #id02 {
 	padding: 10px;
+}
 }
 </style>
 </head>
@@ -171,17 +172,10 @@
           <div id="box1">
             <div id="tabs">
               <div id="id01"></div>
-              
               <div id="id03"></div>
               <!--<div id="mapToggle">Map <i class="fa fa-chevron-up"></i></div>-->
               <div id="id02"></div>
-              <div>
-              	<img src="master/images/nearby.png" style="padding:20px;">
-                <img src="master/images/direction.png" style="padding:20px;">
-              </div>
-              
-              
-              
+             
               <!--              <div id="maps"></div>--> 
               
               <!--              <div id="tabs-2">
@@ -191,9 +185,13 @@
               </div>--> 
             </div>
           </div>
+          
           <div class="clear"></div>
+          
         </div>
+        
       </div>
+  
       <script type="text/javascript">
 function getPid() {
   var re = /pid=(\w+)$/;
@@ -206,9 +204,25 @@ function getPid() {
   return pid;
 }
 </script> 
+</div>
+<div class="bottommenu">
+	<ul id="bm_ul">
+        <li>
+        <img src="master/images/map.png"> 
+        </li>
+        
+        <li>
+        <img src="master/images/direction.png"> 
+        </li>
+        
+        <li>
+        <img src="master/images/nearby.png"> 
+        </li>
+	</ul>
+</div>
     </div>
   </div>
-</div>
+
 <script src="master/js/jquery-ui.js"></script> 
 <script>
 
@@ -242,9 +256,8 @@ out2 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</p>";
 out2 += "</div>";
  maps += "</div>";
  
-var lati = arr[idx].lati.substr(0, 8);
-var longi = arr[idx].longi.substr(0, 8);
-console.log ("selected page Latitude is " + lati + " & Longitude is " + longi);
+ var lati = arr[idx].lati;
+var longi = arr[idx].longi;
 
 var center = new google.maps.LatLng(lati, longi);
 var factory = new google.maps.LatLng(lati, longi);
@@ -335,6 +348,7 @@ $(document).ready(function(){
 
     });
 });
+
 </script> 
 <script type="text/javascript" src="master/js/jssor.slider-21.1.5.min.js"></script> 
 <!-- use jssor.slider-21.1.5.debug.js instead for debug --> 
