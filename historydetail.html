@@ -187,7 +187,7 @@
           <div class="clear"></div>
         </div>
       </div>
-      <script type="text/javascript">
+<!--       <script type="text/javascript">
 function getPid() {
   var re = /pid=(\w+)$/;
   var url = location.href;
@@ -198,7 +198,7 @@ function getPid() {
   }
   return pid;
 }
-</script> 
+</script>  -->
     </div>
   </div>
 </div>
@@ -206,8 +206,14 @@ function getPid() {
 <script>
 
 var xmlhttp = new XMLHttpRequest();
-var url = "master/json/historygeography.json";
- 
+// var url = "master/json/historygeography.json";
+var path = location.pathname.split("/")[1].split(".")[0],
+	pathname = path.includes("detail") ? path.split("detail")[0] : path,
+	pathPid = location.href.slice(-16),
+	url = "master/json/" + pathname + ".json";
+
+console.log(pathname);
+console.log(url);
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		myFunction(xmlhttp.responseText);
@@ -223,10 +229,10 @@ var i;
 var out = "<div>";
 var out2 = "<div id=\"details\">";   
 var maps = "<div id=\"map-canvas\">";
-var pid = getPid();
+// var pid = getPid();
 
 $.each(arr,function(idx){
-if(arr[idx].placeid == pid) {
+if(arr[idx].placeid == pathPid) {
 // test = $('<div/>').html(arr[idx].details).text();
 // test2 = $('<div/>').html(test).text()
 out += "<p style=\"color:#c647bb; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";

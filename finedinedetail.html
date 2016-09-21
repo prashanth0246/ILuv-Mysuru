@@ -224,6 +224,15 @@ console.log(url);
 console.log(url_link);
 
 
+<<<<<<< HEAD
+=======
+var xmlhttp = new XMLHttpRequest();
+var url = "master/json/dineRestaurants.json";
+var path = location.pathname.split("/")[1].split(".")[0],
+	pathname = path.includes("details") ? path.split("details")[0] : path;
+console.log(pathname);
+ 
+>>>>>>> ReworkAjax
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		myFunction(xmlhttp.responseText);
