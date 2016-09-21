@@ -102,7 +102,12 @@
     <div id="id01"></div>
     <script>
         var xmlhttp = new XMLHttpRequest();
-        var url = "master/json/dineRestaurants.json";
+        // var url = "master/json/dineRestaurants.json";
+        var path = location.pathname.split("/")[1].split(".")[0],
+			pathname = path.includes("details") ? path.split("details")[0] : path;
+        console.log(pathname);
+        var url = "master/json/" + pathname + ".json";
+//             test = a == 10 ? alert("true") : alert("false");;
          
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

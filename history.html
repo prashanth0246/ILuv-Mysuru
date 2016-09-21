@@ -101,7 +101,11 @@
     <div id="id01"></div>
     <script>
         var xmlhttp = new XMLHttpRequest();
-        var url = "master/json/historyGeography.json";
+//         var url = "master/json/historyGeography.json";
+		var path = location.pathname.split("/")[1].split(".")[0],
+			pathname = path.includes("detail") ? path.split("detail")[0] : path,
+			pathPid = location.href.slice(-16),
+			url = "master/json/" + pathname + ".json";
          
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

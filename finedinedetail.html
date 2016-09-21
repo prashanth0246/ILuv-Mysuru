@@ -202,6 +202,9 @@ function getPid() {
 
 var xmlhttp = new XMLHttpRequest();
 var url = "master/json/dineRestaurants.json";
+var path = location.pathname.split("/")[1].split(".")[0],
+	pathname = path.includes("details") ? path.split("details")[0] : path;
+console.log(pathname);
  
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
